@@ -238,8 +238,13 @@
         </a>
       </nav>
 
-      <!-- Action Buttons (Includes Language Toggle) -->
+      <!-- Action Buttons (Includes Language Toggle & Copy Agent Prompt) -->
       <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+        <button onclick="copyAgentEvaluatePrompt(this)" class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-purple-500/15 text-purple-300 border border-purple-500/30 hover:bg-purple-500/25 transition whitespace-nowrap" title="一键复制 Prompt 到你的 AI Agent (ChatGPT/Claude/Cursor) 中分析张跃的简历">
+          <i data-lucide="bot" class="w-3.5 h-3.5 text-purple-400"></i>
+          <span class="btn-label-zh lang-zh">复制 Agent 评估指令</span>
+          <span class="btn-label-en lang-en">Copy Prompt for Your AI</span>
+        </button>
         <button onclick="toggleLanguage()" id="lang-toggle-btn" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-mono font-semibold bg-white/5 text-cyan-300 border border-cyan-500/30 hover:bg-cyan-500/15 transition whitespace-nowrap" title="切换中英文 / Switch Language">
           <i data-lucide="languages" class="w-3.5 h-3.5"></i>
           <span class="lang-zh">EN</span>
@@ -247,8 +252,8 @@
         </button>
         <button onclick="openQRModal()" class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-medium bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 hover:bg-emerald-500/25 transition whitespace-nowrap">
           <i data-lucide="qr-code" class="w-3.5 h-3.5"></i>
-          <span class="lang-zh">扫码联系</span>
-          <span class="lang-en">WeChat QR</span>
+          <span class="lang-zh hidden sm:inline">扫码联系</span>
+          <span class="lang-en hidden sm:inline">WeChat QR</span>
         </button>
         <button onclick="window.print()" class="inline-flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-lg shadow-cyan-500/20 hover:opacity-95 transition whitespace-nowrap">
           <i data-lucide="printer" class="w-3.5 h-3.5"></i>
@@ -431,18 +436,23 @@
           </div>
         </div>
 
-        <!-- Website & Blog Links -->
-        <div class="flex items-center justify-between text-xs font-mono pt-2 border-t border-white/10 text-slate-400">
-          <a href="https://okeeper.com" target="_blank" class="hover:text-cyan-400 flex items-center gap-1.5 transition">
-            <i data-lucide="globe" class="w-3.5 h-3.5 text-cyan-400"></i>
-            <span class="lang-zh">个人网站: okeeper.com</span>
-            <span class="lang-en">Blog: okeeper.com</span>
+        <!-- Website, AI Prompt Copy & Blog Links -->
+        <div class="flex items-center justify-between gap-2 text-xs font-mono pt-2.5 border-t border-white/10 text-slate-400">
+          <a href="https://okeeper.com" target="_blank" class="hover:text-cyan-400 flex items-center gap-1.5 transition truncate">
+            <i data-lucide="globe" class="w-3.5 h-3.5 text-cyan-400 shrink-0"></i>
+            <span class="truncate">okeeper.com</span>
           </a>
-          <button onclick="openMarkdownModal()" class="hover:text-indigo-400 flex items-center gap-1 transition cursor-pointer">
-            <i data-lucide="file-text" class="w-3.5 h-3.5 text-indigo-400"></i>
-            <span class="lang-zh">Markdown 简历预览</span>
-            <span class="lang-en">Markdown Source</span>
-          </button>
+          <div class="flex items-center gap-2 shrink-0">
+            <button onclick="copyAgentEvaluatePrompt(this)" class="px-2 py-0.5 rounded-md bg-purple-500/15 border border-purple-500/30 text-purple-300 hover:bg-purple-500/25 flex items-center gap-1 transition cursor-pointer" title="复制 AI Agent 专用评估 Prompt">
+              <i data-lucide="sparkles" class="w-3 h-3 text-purple-400"></i>
+              <span class="btn-label-zh lang-zh">让你的 AI 评估我</span>
+              <span class="btn-label-en lang-en">Ask Your AI About Me</span>
+            </button>
+            <button onclick="openMarkdownModal()" class="hover:text-indigo-400 flex items-center gap-1 transition cursor-pointer" title="查看 Markdown 简历源文件">
+              <i data-lucide="file-text" class="w-3.5 h-3.5 text-indigo-400"></i>
+              <span>MD</span>
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -1067,20 +1077,23 @@
           <!-- Populated dynamically via Claude Code streaming engine -->
         </div>
 
-        <!-- Claude Code Style Footer Telemetry & Custom Input -->
-        <div class="px-4 sm:px-5 py-2.5 bg-[#080C17] border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2 font-mono text-[11px]">
-          <form onsubmit="handleCustomTerminalInput(event)" class="flex items-center gap-2 flex-1">
-            <span class="text-cyan-400 font-bold">❯</span>
-            <input id="cc-custom-input" type="text" placeholder="输入关键词 (如: 微调 / IDE / KuGPT / 思考) 回车流式执行..." class="w-full bg-transparent text-slate-200 placeholder-slate-500 focus:outline-none text-xs" />
-            <button type="submit" class="px-2 py-0.5 rounded bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 hover:bg-cyan-500/25 shrink-0">Run ↵</button>
-          </form>
-          <div class="flex items-center gap-3 text-[10px] text-slate-500 shrink-0 border-t sm:border-t-0 pt-1.5 sm:pt-0 border-white/5">
-            <span>ctx: <strong id="cc-metric-tokens" class="text-slate-300">14.2k</strong></span>
+        <!-- Claude Code Style Footer Telemetry & Quick Agent Prompt Copy (No Text Input) -->
+        <div class="px-4 sm:px-5 py-2.5 bg-[#080C17] border-t border-white/10 flex flex-wrap items-center justify-between gap-2 font-mono text-[11px]">
+          <div class="flex items-center gap-3 text-[10px] sm:text-[11px] text-slate-400">
+            <span class="inline-flex items-center gap-1 text-emerald-400">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              <span>harness: active</span>
+            </span>
+            <span>·</span>
+            <span>ctx: <strong id="cc-metric-tokens" class="text-slate-200">14.2k</strong></span>
             <span>·</span>
             <span>speed: <strong id="cc-metric-speed" class="text-cyan-400">94.6 tok/s</strong></span>
-            <span>·</span>
-            <span class="text-indigo-400">harness: active</span>
           </div>
+          <button onclick="copyAgentEvaluatePrompt(this)" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/[0.04] hover:bg-purple-500/20 text-slate-300 hover:text-purple-200 border border-white/10 hover:border-purple-500/40 transition text-[11px] cursor-pointer" title="一键复制 Prompt 到你的个人 AI Agent 中深度分析我">
+            <i data-lucide="copy" class="w-3 h-3 text-purple-400"></i>
+            <span class="btn-label-zh lang-zh">复制 Prompt 到你的 AI Agent 了解我</span>
+            <span class="btn-label-en lang-en">Copy Prompt for Your Personal AI Agent</span>
+          </button>
         </div>
       </div>
 
@@ -1731,6 +1744,12 @@
     </div>
   </div>
 
+  <!-- Toast Notification for Agent Prompt Copy -->
+  <div id="agent-toast" class="fixed bottom-6 right-6 z-50 hidden items-center gap-2.5 px-4 py-3 rounded-2xl bg-slate-900/95 border border-purple-500/40 text-purple-200 shadow-2xl shadow-purple-500/20 backdrop-blur-xl text-xs font-mono no-print">
+    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+    <span id="agent-toast-text">已复制 AI Agent 评估 Prompt！可直接粘贴至你的个人 Agent 中</span>
+  </div>
+
   <!-- Scripts -->
   <script>
     lucide.createIcons();
@@ -1743,13 +1762,46 @@
       const next = getLang() === 'zh' ? 'en' : 'zh';
       document.documentElement.setAttribute('data-lang', next);
       localStorage.setItem('zy_resume_lang', next);
-      const input = document.getElementById('cc-custom-input');
-      if (input) {
-        input.placeholder = next === 'zh'
-          ? '输入关键词 (如: 微调 / IDE / KuGPT / 思考) 回车流式执行...'
-          : 'Type a command or keyword (e.g. finetune / ide / kugpt / philosophy) & hit Enter...';
-      }
       runTerminalQuery(currentActiveKey || 'match');
+    }
+
+    function copyAgentEvaluatePrompt(btnEl) {
+      const mdUrl = new URL('RESUME_2026.md', window.location.href).href;
+      const isZh = getLang() === 'zh';
+      const promptText = isZh
+        ? `请帮我深入分析一下这位候选人（张跃）的过往项目经验、AI Agent 与大模型微调（SFT/RLHF）落地能力、自研 VS Code AI 研发平台架构经验以及 12 年分布式系统功底，并评估他与我们 AI Agent 开发工程师 / 架构师岗位的匹配度。这是他的个人简历在线 Markdown 地址：${mdUrl}`
+        : `Please analyze this candidate's (Zhang Yue) background, including his AI Agent engineering, Qwen LLM fine-tuning (Pre-train/SFT/RLHF), in-house VS Code AI R&D platform architecture, and 12 years of distributed systems experience. Here is his online Markdown resume URL: ${mdUrl}`;
+
+      navigator.clipboard.writeText(promptText).then(() => {
+        // Button feedback
+        if (btnEl) {
+          const zhSpan = btnEl.querySelector('.btn-label-zh');
+          const enSpan = btnEl.querySelector('.btn-label-en');
+          const origZh = zhSpan ? zhSpan.textContent : '';
+          const origEn = enSpan ? enSpan.textContent : '';
+          if (zhSpan) zhSpan.textContent = '✔ 已复制 Prompt';
+          if (enSpan) enSpan.textContent = '✔ Prompt Copied!';
+          setTimeout(() => {
+            if (zhSpan) zhSpan.textContent = origZh;
+            if (enSpan) enSpan.textContent = origEn;
+          }, 2200);
+        }
+
+        // Floating toast feedback
+        const toast = document.getElementById('agent-toast');
+        const toastText = document.getElementById('agent-toast-text');
+        if (toast && toastText) {
+          toastText.textContent = isZh
+            ? `✔ 已复制 AI Agent 专用 Prompt（含在线简历地址 ${mdUrl}），快去粘贴给你的个人 Agent 吧！`
+            : `✔ Copied AI Agent Evaluation Prompt (with ${mdUrl}). Paste it into your AI Agent!`;
+          toast.classList.remove('hidden');
+          toast.classList.add('flex');
+          setTimeout(() => {
+            toast.classList.add('hidden');
+            toast.classList.remove('flex');
+          }, 3200);
+        }
+      });
     }
 
     function openQRModal() {
@@ -2156,26 +2208,6 @@
       screen.scrollTop = screen.scrollHeight;
 
       setStreamStatus(false);
-    }
-
-    function handleCustomTerminalInput(e) {
-      e.preventDefault();
-      const input = document.getElementById('cc-custom-input');
-      if (!input) return;
-      const val = input.value.trim();
-      if (!val) return;
-      input.value = '';
-
-      const lower = val.toLowerCase();
-      let matchedKey = 'match';
-      if (lower.includes('微调') || lower.includes('客服') || lower.includes('qwen') || lower.includes('sft') || lower.includes('rlhf') || lower.includes('finetune') || lower.includes('cs')) {
-        matchedKey = 'finetune';
-      } else if (lower.includes('ide') || lower.includes('vs') || lower.includes('平台') || lower.includes('vibe') || lower.includes('harness') || lower.includes('platform')) {
-        matchedKey = 'ide';
-      } else if (lower.includes('未来') || lower.includes('思考') || lower.includes('指挥家') || lower.includes('单兵') || lower.includes('commander') || lower.includes('philosophy')) {
-        matchedKey = 'future';
-      }
-      runTerminalQuery(matchedKey, val);
     }
 
     window.addEventListener('DOMContentLoaded', () => {

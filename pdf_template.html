@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>张跃 - 架构师 / AI Agent 开发工程师 - 个人简历</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    @page {
+      size: A4;
+      margin: 7.5mm 10mm 7.5mm 10mm;
+    }
+
+    body {
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #1E293B;
+      background: #FFFFFF;
+      font-size: 8.6pt;
+      line-height: 1.44;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Header Banner */
+    .resume-header {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 65%, #1E1B4B 100%);
+      color: #FFFFFF;
+      border-radius: 8px;
+      padding: 13px 18px;
+      margin-bottom: 9px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .header-left {
+      vertical-align: middle;
+      width: 68%;
+    }
+
+    .header-right {
+      vertical-align: middle;
+      text-align: right;
+      width: 32%;
+    }
+
+    .avatar-box {
+      display: inline-block;
+      vertical-align: middle;
+      width: 62px;
+      height: 76px;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 2px solid rgba(56, 189, 248, 0.7);
+      margin-right: 14px;
+      background: #0F172A;
+    }
+
+    .avatar-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    .title-box {
+      display: inline-block;
+      vertical-align: middle;
+      max-width: calc(100% - 85px);
+    }
+
+    .candidate-name {
+      font-size: 17.5pt;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: #FFFFFF;
+      line-height: 1.15;
+    }
+
+    .candidate-name span {
+      font-size: 10.5pt;
+      font-weight: 500;
+      color: #38BDF8;
+      margin-left: 8px;
+    }
+
+    .candidate-role {
+      font-size: 9.5pt;
+      font-weight: 600;
+      color: #E2E8F0;
+      margin-top: 3px;
+    }
+
+    .candidate-meta {
+      font-size: 8.2pt;
+      color: #94A3B8;
+      margin-top: 3px;
+      white-space: nowrap;
+    }
+
+    .candidate-contact {
+      font-size: 8pt;
+      color: #CBD5E1;
+      margin-top: 4px;
+      white-space: nowrap;
+    }
+
+    .candidate-contact span {
+      margin-right: 10px;
+    }
+
+    /* QR boxes in header */
+    .qr-item {
+      display: inline-block;
+      text-align: center;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+
+    .qr-img-wrap {
+      width: 56px;
+      height: 56px;
+      background: #FFFFFF;
+      padding: 3px;
+      border-radius: 5px;
+      margin: 0 auto;
+    }
+
+    .qr-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .qr-caption {
+      font-size: 7pt;
+      color: #CBD5E1;
+      margin-top: 3px;
+      line-height: 1.1;
+    }
+
+    /* AI Quote Callout */
+    .ai-perspective-box {
+      background: #F8FAFC;
+      border-left: 3.5px solid #0284C7;
+      border-top: 1px solid #E2E8F0;
+      border-right: 1px solid #E2E8F0;
+      border-bottom: 1px solid #E2E8F0;
+      border-radius: 0 6px 6px 0;
+      padding: 6px 10px;
+      margin-bottom: 9px;
+      font-size: 8.3pt;
+      color: #334155;
+    }
+
+    .ai-perspective-box strong {
+      color: #0F172A;
+    }
+
+    /* Section Heading */
+    .section-block {
+      margin-bottom: 9px;
+    }
+
+    .section-header {
+      border-bottom: 1.5px solid #0F172A;
+      padding-bottom: 2px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      page-break-after: avoid;
+      break-after: avoid;
+    }
+
+    .section-title {
+      font-size: 10.5pt;
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: 0.3px;
+    }
+
+    .section-title-badge {
+      display: inline-block;
+      background: #0F172A;
+      color: #FFFFFF;
+      font-size: 9.2pt;
+      font-weight: 700;
+      padding: 1.5px 9px;
+      border-radius: 4px 4px 0 0;
+    }
+
+    .section-sub {
+      font-size: 7.8pt;
+      color: #64748B;
+      font-weight: 500;
+    }
+
+    /* Core Strengths List */
+    .strength-list {
+      list-style: none;
+    }
+
+    .strength-list li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 3.5px;
+      text-align: justify;
+    }
+
+    .strength-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #0284C7;
+      font-weight: bold;
+    }
+
+    .strength-list strong {
+      color: #0F172A;
+    }
+
+    /* Highlight Tag */
+    .hl-tag {
+      display: inline-block;
+      background: #E0F2FE;
+      color: #0369A1;
+      font-weight: 600;
+      font-size: 7.5pt;
+      padding: 0.5px 4px;
+      border-radius: 3px;
+      margin: 0 1px;
+    }
+
+    .hl-green {
+      background: #DCFCE7;
+      color: #15803D;
+    }
+
+    /* Project Item */
+    .project-card {
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 7px 10px;
+      margin-bottom: 6px;
+      background: #FFFFFF;
+      page-break-inside: avoid;
+    }
+
+    .project-card.featured {
+      border-left: 3.5px solid #0284C7;
+      background: #FAFDFE;
+    }
+
+    .project-top {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2.5px;
+    }
+
+    .project-name {
+      font-size: 9.4pt;
+      font-weight: 700;
+      color: #0F172A;
+    }
+
+    .project-role {
+      font-size: 8.1pt;
+      font-weight: 600;
+      color: #0369A1;
+      margin-left: 6px;
+    }
+
+    .project-date {
+      text-align: right;
+      font-size: 8pt;
+      color: #64748B;
+      font-family: monospace;
+      white-space: nowrap;
+    }
+
+    .project-desc {
+      font-size: 8.4pt;
+      color: #334155;
+      margin-bottom: 2.5px;
+      text-align: justify;
+    }
+
+    .project-bullets {
+      list-style: none;
+    }
+
+    .project-bullets li {
+      position: relative;
+      padding-left: 10px;
+      margin-bottom: 2px;
+      font-size: 8.4pt;
+      color: #1E293B;
+      text-align: justify;
+    }
+
+    .project-bullets li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #0284C7;
+    }
+
+    /* Work Experience Item */
+    .work-item {
+      margin-bottom: 6px;
+      padding-bottom: 5px;
+      border-bottom: 1px dashed #E2E8F0;
+      page-break-inside: avoid;
+    }
+
+    .work-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .work-header {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 3px;
+    }
+
+    .company-name {
+      font-size: 10pt;
+      font-weight: 700;
+      color: #0F172A;
+    }
+
+    .job-title {
+      font-size: 8.8pt;
+      font-weight: 600;
+      color: #0369A1;
+      margin-left: 8px;
+    }
+
+    .work-date {
+      text-align: right;
+      font-size: 8.5pt;
+      color: #64748B;
+      font-family: monospace;
+    }
+
+    /* Compact 2-Column Grid for Earlier Projects & Education */
+    .two-col-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .two-col-table td {
+      vertical-align: top;
+      width: 50%;
+    }
+
+    .two-col-table td:first-child {
+      padding-right: 5px;
+    }
+
+    .two-col-table td:last-child {
+      padding-left: 5px;
+    }
+
+    .edu-bar {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 8.8pt;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. HEADER BANNER -->
+  <div class="resume-header">
+    <table class="header-table">
+      <tr>
+        <td class="header-left">
+          <div class="avatar-box">
+            <img src="assets/avatar.jpg" alt="张跃" />
+          </div>
+          <div class="title-box">
+            <div class="candidate-name">张跃<span>Zhang Yue</span></div>
+            <div class="candidate-role">求职意向：架构师 / AI Agent 开发工程师</div>
+            <div class="candidate-meta">男 | 33岁 | 12年工作经验（3.5年 AI 应用与 Agent 落地） | 期望城市：深圳</div>
+            <div class="candidate-contact">
+              <span>📞 18679223924</span>
+              <span>✉️ okeeper.com@gmail.com</span>
+              <span>🌐 okeeper.com</span>
+              <span>💻 github.com/okeeper</span>
+            </div>
+          </div>
+        </td>
+        <td class="header-right">
+          <div class="qr-item">
+            <div class="qr-img-wrap"><img src="assets/qr_wechat.jpg" alt="个人微信" /></div>
+            <div class="qr-caption">个人微信: 长风</div>
+          </div>
+          <div class="qr-item">
+            <div class="qr-img-wrap"><img src="assets/qr_gzh.jpg" alt="神笔君公众号" /></div>
+            <div class="qr-caption">公众号: 神笔君</div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- AI Engineering Perspective -->
+  <div class="ai-perspective-box">
+    <strong>💡 对 AI 时代软件开发的判断与思考：</strong>从某种意义上讲，AI 已经对软件开发行业带来了深刻的变革，未来不再有传统的前端、后端，或 Java / Python / PHP 等具体实现语言分工的团队协作方式和组织形式，只有一种角色叫 <strong>AI 工程师（他更像是一位“指挥家”）</strong>。越到后面，越看重个人的<strong>单兵作战能力，以及团队协作、需求描述、逻辑描述和执行力</strong>等软实力。
+  </div>
+
+  <!-- 2. CORE STRENGTHS -->
+  <div class="section-block">
+    <div class="section-header">
+      <span class="section-title-badge">个人优势</span>
+      <span class="section-sub">Core Strengths & Technical Summary</span>
+    </div>
+    <ul class="strength-list">
+      <li><strong>入局早、自驱力强的 AI 应用实践者（2023年初入局）：</strong>早在 2023 年年初就开始关注 AI 发展并全身心投入 AI 的使用及相关技术研究，意识到这是一次伟大的技术革命；自发提议在公司内部构建统一 Token Hub（<strong>KuGPT</strong>），方便各业务线快速开展 AI 业务创新。3 年多以来，除日常工作外持续维护个人技术公众号<strong>「神笔君」</strong>，不定期分享前沿技术和个人 AI 看法，引起不少关注。</li>
+      <li><strong>内部研发效能 AI 平台 / AI IDE 底层架构与核心研发：</strong>基于 <strong>VS Code 深度自研</strong>适配 Akulaku 及东南亚各大金融公司研发习惯的团队效能提升研发平台；担任<strong>底层架构设计及核心研发角色</strong>，从头开始主导了前期整个平台的开发设计工作，打通需求输入→代码产出→个人 <strong>Vibe Coding</strong> 及 Bug 修复、需求变更、跨团队协作全流程，将团队研发效率与个人 <strong>Harness 经验</strong>沉淀为公司资产。</li>
+      <li><strong>大模型底层原理、微调（SFT/RLHF）与智能客服 Harness 落地：</strong>了解 LLM 底层基本原理，熟练掌握 <strong>Pre-train、Fine-tuning、SFT、RLHF</strong> 等相关微调技术；熟练使用 OpenAI、Anthropic 等平台及向量数据库、<strong>Dify、LlamaIndex、LangChain</strong> 等框架。在电商和金融智能客服场景通过真实对话记录与 Wiki 语料清洗预处理及开源 <strong>Qwen 模型微调</strong>，使<strong>人工介入率从 90% 降到 40% 左右</strong>；并迭代 <strong>Harness 工程</strong>将下单、授信、订单查询、退款等核心流程融入对话式交互。</li>
+      <li><strong>12 年大型后端及分布式架构设计经验：</strong>曾任职<strong>阿里巴巴菜鸟网络</strong>，现任 <strong>Akulaku 架构师及公司架构委员会成员</strong>。精通 Spring Cloud、Dubbo 微服务架构、领域驱动设计（DDD）、JVM 性能调优与分布式系统一致性设计；开发过压测工具、可重试框架、分布式 ID 生成器等多种通用组件。</li>
+      <li><strong>团队管理与高效沟通协调能力：</strong>长期带领一线开发团队（7人）快速实现业务需求，结合成员特点帮助其适应性成长，打造了富有战斗力的核心团队，在需求分析、架构设计、跨部门协调到上线及应急处理中实现了良好的工程口碑。</li>
+    </ul>
+  </div>
+
+  <!-- 3. KEY AI & ARCHITECTURE PROJECTS -->
+  <div class="section-block">
+    <div class="section-header">
+      <span class="section-title-badge">核心项目经历（AI Agent 与大模型落地）</span>
+      <span class="section-sub">Key AI Agent & LLM Projects (2023 - 2026)</span>
+    </div>
+
+    <!-- Project 1 -->
+    <div class="project-card featured">
+      <table class="project-top">
+        <tr>
+          <td>
+            <span class="project-name">1. 内部团队研发效能 AI 研发平台 / AI IDE 开发</span>
+            <span class="project-role">底层架构设计及核心研发（从头主导前期开发设计）</span>
+          </td>
+          <td class="project-date">2024.06 - 至今</td>
+        </tr>
+      </table>
+      <div class="project-desc">
+        <strong>项目概述：</strong>基于 <strong>VS Code 深度自研</strong>一套适配 Akulaku 及东南亚各大金融公司的研发习惯的团队效能提升研发平台。我在其中担任底层架构设计及核心研发角色，从头开始主导了前期整个平台的开发设计工作。
+      </div>
+      <ul class="project-bullets">
+        <li><strong>需求到个人 Vibe Coding 无缝衔接：</strong>设计并实现从产品需求输入、技术方案与代码自动产出，到最终开发者个人 <span class="hl-tag">Vibe Coding</span> 的无缝衔接闭环。</li>
+        <li><strong>研发生命周期与跨团队协作流程集成：</strong>将研发过程中的 <strong>Bug 修复、需求变更、跨团队需求的协作流程</strong> 也一并集成至平台中，借助 AI Agent 能力做团队整体的研发效率提升。</li>
+        <li><strong>个人 Harness 经验沉淀为公司资产：</strong>核心设计是将团队的研发效率规范和相关个人 <span class="hl-tag">Harness 经验</span> 沉淀为公司级可复用资产；伴随着底层大模型能力不断提升，团队整体研发效率也随之持续提升。</li>
+      </ul>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card featured">
+      <table class="project-top">
+        <tr>
+          <td>
+            <span class="project-name">2. 电商与金融智能客服大模型微调 & Harness 对话式业务 Agent</span>
+            <span class="project-role">核心架构设计 & 模型微调与 Agent 研发</span>
+          </td>
+          <td class="project-date">2023.09 - 2024.08</td>
+        </tr>
+      </table>
+      <div class="project-desc">
+        <strong>项目概述：</strong>针对电商和金融场景开展智能客服 AI 创新应用落地，从早期检索编排到深入大语言模型底层微调提升准确率，并演进为融合核心交易链路的对话式业务 Agent。
+      </div>
+      <ul class="project-bullets">
+        <li><strong>多框架检索与编排打磨：</strong>早期从提示词（Prompt）设计、RAG（检索增强生成），到 <span class="hl-tag">Dify</span> <span class="hl-tag">LlamaIndex</span> <span class="hl-tag">LangChain</span> 等主流框架都做了大量尝试和工程优化。</li>
+        <li><strong>真实语料清洗预处理与开源 Qwen 模型微调：</strong>深入研究大语言模型底层基本原理，熟练运用 <span class="hl-tag">Pre-train</span> <span class="hl-tag">Fine-tuning</span> <span class="hl-tag">SFT</span> <span class="hl-tag">RLHF</span> 等相关微调技术；针对电商和金融常见问题，使用公司内部沉淀的<strong>真实线上聊天客服记录、内部资料及 Wiki</strong> 做数据语料收集与预处理，对开源 <strong>Qwen</strong> 模型进行微调，从各个维度优化回复准确率，取得显著成功——<span class="hl-tag hl-green">人工客服介入率从 90% 降到了 40% 左右</span>。</li>
+        <li><strong>Harness 工程智能客服迭代（对话式电商交互）：</strong>后续迭代使用 <span class="hl-tag">Harness 工程</span> 改造智能客服，把电商核心的如<strong>下单、授信、订单查询、退款</strong>等核心业务流程融入到智能客服中，方便用户直接进行对话式电商业务交互，迎合当前个人 Agent 操作一切的使用习惯。</li>
+      </ul>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card featured">
+      <table class="project-top">
+        <tr>
+          <td>
+            <span class="project-name">3. KuGPT 平台建设（公司内部统一 Token Hub）</span>
+            <span class="project-role">提议发起人 & 架构设计及开发</span>
+          </td>
+          <td class="project-date">2023.03 - 2023.08</td>
+        </tr>
+      </table>
+      <ul class="project-bullets">
+        <li><strong>自发提议与能力集成：</strong>2023 年初随着 ChatGPT 爆火，自发提议在公司内部构建自己的 Token Hub（KuGPT），使公司各业务线能够低成本快速接入文本生成、文档向量化、文档向量搜索等能力，屏蔽底层各大模型差异，做到零成本切换。</li>
+        <li><strong>异构架构与安全计费管控：</strong>接口兼容主流标准并采用 JWT 鉴权；调研主流向量数据库，落地「业务逻辑入口为 Java + 底层核心 AI 交互为 Python」的可水平扩缩容分布式架构；统一管控敏感词出网安全、付费 API 路由与 Token 计费管理。成功支撑 <strong>8 个业务应用</strong>对接放量，日均 Query 量 <strong>2w+</strong>。</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 4. CLASSIC DISTRIBUTED ARCHITECTURE PROJECTS -->
+  <div class="section-block" style="page-break-before: always;">
+    <div class="section-header">
+      <span class="section-title-badge">大型分布式系统与高并发架构项目</span>
+      <span class="section-sub">Distributed Systems & High-Concurrency Architecture</span>
+    </div>
+
+    <div class="project-card">
+      <table class="project-top">
+        <tr>
+          <td>
+            <span class="project-name">4. Akulaku 电商交易中心微服务重构 & 业务监控违规风控体系</span>
+            <span class="project-role">架构师及开发负责人</span>
+          </td>
+          <td class="project-date">2019.09 - 2023.01</td>
+        </tr>
+      </table>
+      <ul class="project-bullets">
+        <li><strong>核心交易与计价系统重构：</strong>主导电商核心交易系统从单体向微服务架构（Spring Cloud/Dubbo）的推翻重构；抽象通用计价中心与高扩展优惠库表模型（兼容优惠券、运费券、零元购等迭代）；解决分布式一致性事务问题，采用美团 Leaf 作为分布式 ID 生成器。</li>
+        <li><strong>全链路压测与性能调优：</strong>主导上线前系统压测与性能瓶颈分析，优化后<strong>交易下单单机写接口性能达 300 TPS（TP99 耗时 400ms），订单读接口单机达 1000 QPS</strong>。</li>
+        <li><strong>业务监控体系与违规中心：</strong>设计维护近 50 项业务和指标监控，结合 Grafana 实时微信/电话告警；针对印尼市场灰产刷单防控，设计开发「交易违规中心系统」，通过 <strong>EL 表达式动态维护监控指标获取、计算规则与告警内容</strong>。</li>
+        <li><strong>通用组件封装共享：</strong>开发压测工具 <code>ec-service-benchmark</code>、高可靠可重试框架 <code>consistent-invoker-spring-boot-starter</code>、分布式 ID 组件 <code>leaf-spring-boot-starter</code> 等，大幅提升团队开发效率与代码复用率。</li>
+      </ul>
+    </div>
+
+    <table class="two-col-table">
+      <tr>
+        <td>
+          <div class="project-card" style="margin-bottom:0;">
+            <table class="project-top">
+              <tr>
+                <td><span class="project-name">5. 阿里菜鸟国际 WMS 库存对账系统</span></td>
+                <td class="project-date">2018.04-2018.09</td>
+              </tr>
+            </table>
+            <ul class="project-bullets">
+              <li>担任项目 <strong>PM / PG</strong>，针对复杂仓储系统仓库库存与上游不一致痛点，独立完成架构设计、工期评估与开发落地。</li>
+              <li>优化 WMS 库存技术架构，实现差异报表与智能调账系统，<strong>将 WMS 出库库存上下游准确率从 99% 提升至 99.99%</strong>。</li>
+            </ul>
+          </div>
+        </td>
+        <td>
+          <div class="project-card" style="margin-bottom:0;">
+            <table class="project-top">
+              <tr>
+                <td><span class="project-name">6. 百倍现货交易系统 & 千米商品中心</span></td>
+                <td class="project-date">2015.03-2017.08</td>
+              </tr>
+            </table>
+            <ul class="project-bullets">
+              <li>独立设计百倍科技交易核心模块，基于 Redis 研发<strong>高性能内存撮合引擎（撮合性能达 300 TPS）</strong>，主导公司从 0 到 1 微服务化实践。</li>
+              <li>负责千米网核心商品服务中心重构、收银台开发与大规模商品数据库结构整改迁移。</li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- 5. WORK EXPERIENCE -->
+  <div class="section-block">
+    <div class="section-header">
+      <span class="section-title-badge">工作经历</span>
+      <span class="section-sub">Work Experience (12 Years)</span>
+    </div>
+
+    <div class="work-item">
+      <table class="work-header">
+        <tr>
+          <td>
+            <span class="company-name">Akulaku</span>
+            <span class="job-title">架构师 / AI Agent 开发工程师（公司架构委员会成员）</span>
+          </td>
+          <td class="work-date">2019.09 - 至今</td>
+        </tr>
+      </table>
+      <ul class="project-bullets">
+        <li><strong>AI 研发平台与智能客服 Agent 落地：</strong>从头主导基于 VS Code 深度自研的内部团队研发效能 AI 平台底层架构设计与核心开发（打通需求输入→代码产出→个人 Vibe Coding 及 Bug 修复/需求变更/跨团队协作，沉淀个人 Harness 经验为公司资产）；主导电商与金融智能客服开源 Qwen 模型微调（Pre-train / SFT / RLHF，人工介入率从 90% 降至 40% 左右）及 Harness 对话式下单/授信/查单/退款流程改造；自发提议并主导 KuGPT（Token Hub）建设。</li>
+        <li><strong>核心系统架构与团队管理：</strong>负责电商交易中心交易链路各系统稳定维护、微服务重构与性能调优（写 300 TPS / 读 1000 QPS）；带领 7 人一线开发团队，协调工作量、把控发版质量、拆解 KPI 进行前瞻性规划并帮助成员成长；作为公司架构委员会成员负责重要技术方案制定。</li>
+      </ul>
+    </div>
+
+    <div class="work-item">
+      <table class="work-header">
+        <tr>
+          <td>
+            <span class="company-name">阿里巴巴菜鸟网络 (Alibaba Cainiao Network)</span>
+            <span class="job-title">高级开发工程师</span>
+          </td>
+          <td class="work-date">2017.09 - 2019.09</td>
+        </tr>
+      </table>
+      <ul class="project-bullets">
+        <li>负责菜鸟网络仓储管理系统（WMS）的日常需求分析、开发与系统设计优化；主动跟踪解决线上问题并编写自动化脚本工具提升可靠性；独立设计并实现 WMS 与上下游链路库存差异报表及智能调账的库存对账系统（准确率 99%→99.99%）；在大部门组织《比特币实现原理》主题分享。</li>
+      </ul>
+    </div>
+
+    <div class="work-item">
+      <table class="work-header">
+        <tr>
+          <td>
+            <span class="company-name">广州百倍网络科技有限公司</span>
+            <span class="job-title">开发工程师</span>
+          </td>
+          <td class="work-date">2015.09 - 2017.08</td>
+        </tr>
+      </table>
+      <ul class="project-bullets">
+        <li>独立完成核心交易模块架构设计开发及 300 TPS Redis 撮合引擎系统；参与领域模型划分及 Spring Cloud / Dubbo 微服务架构从无到有落地，负责服务容灾与自动化测试方案；在公司内部组织《MySQL 读写分离》《Disruptor》《服务注册发现》等技术分享。</li>
+      </ul>
+    </div>
+
+    <div class="work-item">
+      <table class="work-header">
+        <tr>
+          <td>
+            <span class="company-name">江苏千米网络科技有限公司</span>
+            <span class="job-title">Java 开发工程师</span>
+          </td>
+          <td class="work-date">2014.07 - 2015.09</td>
+        </tr>
+      </table>
+      <ul class="project-bullets">
+        <li>独立完成私有云电商平台定制项目研发、千米网收银台项目开发及商品数据结构调整迁移工作；曾多次获得公司内部优秀员工称号。</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 6. EDUCATION & CERTIFICATES -->
+  <div class="section-block" style="margin-bottom:0;">
+    <div class="section-header">
+      <span class="section-title-badge">教育经历与专业证书</span>
+      <span class="section-sub">Education, Certifications & Technical Output</span>
+    </div>
+    <div class="edu-bar">
+      <table style="width:100%; border-collapse:collapse; white-space:nowrap;">
+        <tr>
+          <td><strong>🎓 深圳大学</strong> · 本科 · 计算机科学与技术</td>
+          <td style="text-align:center;"><strong>🏅 资格证书：</strong>软件设计师（国家中级职称）</td>
+          <td style="text-align:right;"><strong>✍️ 长期技术输出：</strong>公众号「神笔君」 | 个人网站 okeeper.com</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>

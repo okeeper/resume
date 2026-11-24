@@ -182,69 +182,64 @@
 
   <!-- Top Sticky Navigation Bar -->
   <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#050811]/85 border-b border-white/10 no-print">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
       <!-- Brand Identity -->
-      <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+      <div class="flex items-center gap-2.5 sm:gap-3 shrink-0">
         <div class="relative flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-indigo-600 p-[1px] shrink-0">
           <div class="w-full h-full bg-[#070B16] rounded-[11px] flex items-center justify-center font-mono font-bold text-cyan-400 text-sm">
             ZY
           </div>
           <span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 rounded-full ring-2 ring-[#050811]"></span>
         </div>
-        <div class="min-w-0">
-          <div class="flex items-center gap-2 whitespace-nowrap">
+        <div class="whitespace-nowrap">
+          <div class="flex items-center gap-2">
             <span class="font-bold tracking-tight text-white text-sm sm:text-base">
               <span class="lang-zh">张跃</span>
               <span class="lang-en">Zhang Yue</span>
             </span>
-            <span class="hidden sm:inline-block text-[11px] sm:text-xs font-mono px-2 py-0.5 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
+            <span class="hidden xl:inline-block text-[11px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
               <span class="lang-zh">AI Agent 工程师 / 架构师</span>
               <span class="lang-en">AI Agent Engineer & Architect</span>
             </span>
           </div>
           <p class="text-[11px] text-slate-400 font-mono hidden sm:block">
             <span class="lang-zh">okeeper.com · 公众号: 神笔君</span>
-            <span class="lang-en">okeeper.com · WeChat Column: ShenBiJun (神笔君)</span>
+            <span class="lang-en">okeeper.com · WeChat: ShenBiJun</span>
           </p>
         </div>
       </div>
 
       <!-- Nav Links -->
-      <nav class="hidden lg:flex items-center gap-1 text-sm font-medium text-slate-300">
-        <a href="#manifesto" class="px-3 py-1.5 rounded-lg hover:bg-white/5 hover:text-cyan-400 transition">
+      <nav class="hidden lg:flex items-center gap-1 text-sm font-medium text-slate-300 whitespace-nowrap">
+        <a href="#manifesto" class="px-2.5 py-1.5 rounded-lg hover:bg-white/5 hover:text-cyan-400 transition whitespace-nowrap">
           <span class="lang-zh">AI 工程思考</span>
           <span class="lang-en">AI Perspective</span>
         </a>
-        <a href="#flagship-ai" class="px-3 py-1.5 rounded-lg hover:bg-white/5 hover:text-cyan-400 transition flex items-center gap-1.5">
-          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
+        <a href="#flagship-ai" class="px-2.5 py-1.5 rounded-lg hover:bg-white/5 hover:text-cyan-400 transition flex items-center gap-1.5 whitespace-nowrap">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping shrink-0"></span>
           <span class="lang-zh">AI 核心项目</span>
           <span class="lang-en">AI Projects</span>
         </a>
-        <a href="#ai-playground" class="px-3 py-1.5 rounded-lg hover:bg-white/5 hover:text-cyan-400 transition">
+        <a href="#ai-playground" class="px-2.5 py-1.5 rounded-lg hover:bg-white/5 hover:text-cyan-400 transition whitespace-nowrap">
           <span class="lang-zh">Agent 终端</span>
           <span class="lang-en">Agent CLI</span>
         </a>
-        <a href="#architecture" class="px-3 py-1.5 rounded-lg hover:bg-white/5 hover:text-cyan-400 transition">
-          <span class="lang-zh">分布式架构项目</span>
-          <span class="lang-en">Distributed Systems</span>
+        <a href="#architecture" class="px-2.5 py-1.5 rounded-lg hover:bg-white/5 hover:text-cyan-400 transition whitespace-nowrap">
+          <span class="lang-zh">分布式项目</span>
+          <span class="lang-en">Systems</span>
         </a>
-        <a href="#timeline" class="px-3 py-1.5 rounded-lg hover:bg-white/5 hover:text-cyan-400 transition">
+        <a href="#timeline" class="px-2.5 py-1.5 rounded-lg hover:bg-white/5 hover:text-cyan-400 transition whitespace-nowrap">
           <span class="lang-zh">工作经历</span>
           <span class="lang-en">Experience</span>
         </a>
-        <a href="#connect" class="px-3 py-1.5 rounded-lg hover:bg-white/5 hover:text-cyan-400 transition">
+        <a href="#connect" class="px-2.5 py-1.5 rounded-lg hover:bg-white/5 hover:text-cyan-400 transition whitespace-nowrap">
           <span class="lang-zh">联系方式</span>
           <span class="lang-en">Contact</span>
         </a>
       </nav>
 
-      <!-- Action Buttons (Includes Language Toggle & Copy Agent Prompt) -->
-      <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
-        <button onclick="copyAgentEvaluatePrompt(this)" class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-purple-500/15 text-purple-300 border border-purple-500/30 hover:bg-purple-500/25 transition whitespace-nowrap" title="一键复制 Prompt 到你的 AI Agent (ChatGPT/Claude/Cursor) 中分析张跃的简历">
-          <i data-lucide="bot" class="w-3.5 h-3.5 text-purple-400"></i>
-          <span class="btn-label-zh lang-zh">复制 Agent 评估指令</span>
-          <span class="btn-label-en lang-en">Copy Prompt for Your AI</span>
-        </button>
+      <!-- Action Buttons (Clean: Language Toggle + WeChat QR + Download Pre-built PDF) -->
+      <div class="flex items-center gap-2 shrink-0">
         <button onclick="toggleLanguage()" id="lang-toggle-btn" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-mono font-semibold bg-white/5 text-cyan-300 border border-cyan-500/30 hover:bg-cyan-500/15 transition whitespace-nowrap" title="切换中英文 / Switch Language">
           <i data-lucide="languages" class="w-3.5 h-3.5"></i>
           <span class="lang-zh">EN</span>
@@ -255,12 +250,12 @@
           <span class="lang-zh hidden sm:inline">扫码联系</span>
           <span class="lang-en hidden sm:inline">WeChat QR</span>
         </button>
-        <button onclick="window.print()" class="inline-flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-lg shadow-cyan-500/20 hover:opacity-95 transition whitespace-nowrap">
-          <i data-lucide="printer" class="w-3.5 h-3.5"></i>
-          <span class="hidden sm:inline lang-zh">导出 PDF</span>
-          <span class="hidden sm:inline lang-en">Export PDF</span>
+        <a href="ZhangYue_Resume_2026.pdf" download="张跃-架构师-AIAgent开发工程师-简历.pdf" class="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-lg shadow-cyan-500/20 hover:opacity-95 transition whitespace-nowrap">
+          <i data-lucide="download" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline lang-zh">下载 PDF 简历</span>
+          <span class="hidden sm:inline lang-en">Download PDF</span>
           <span class="sm:hidden">PDF</span>
-        </button>
+        </a>
       </div>
     </div>
 
@@ -403,8 +398,23 @@
           </div>
         </div>
 
+        <!-- Copy AI Agent Prompt Feature Bar (Placed per user arrow between Profile header and QR cards) -->
+        <div class="mt-3.5">
+          <button onclick="copyAgentEvaluatePrompt(this)" class="w-full py-2 px-3 rounded-xl bg-gradient-to-r from-purple-500/15 via-indigo-500/15 to-cyan-500/15 hover:from-purple-500/25 hover:to-cyan-500/25 border border-purple-500/35 text-purple-200 flex items-center justify-between gap-2 text-xs font-mono transition group cursor-pointer shadow-sm">
+            <span class="flex items-center gap-2 truncate">
+              <i data-lucide="bot" class="w-4 h-4 text-purple-400 shrink-0 group-hover:scale-110 transition"></i>
+              <span class="btn-label-zh lang-zh font-medium truncate">一键复制 Prompt 到你的 AI Agent 了解我</span>
+              <span class="btn-label-en lang-en font-medium truncate">Copy Prompt for Your AI Agent to Evaluate Me</span>
+            </span>
+            <span class="px-1.5 py-0.5 rounded bg-purple-500/20 text-[10px] text-purple-300 border border-purple-400/30 shrink-0 flex items-center gap-1">
+              <i data-lucide="copy" class="w-2.5 h-2.5"></i>
+              <span>Copy</span>
+            </span>
+          </button>
+        </div>
+
         <!-- Mini Dual QR Preview -->
-        <div class="my-4 p-3.5 rounded-2xl bg-slate-950/70 border border-white/10 grid grid-cols-2 gap-3">
+        <div class="my-3.5 p-3.5 rounded-2xl bg-slate-950/70 border border-white/10 grid grid-cols-2 gap-3">
           <div class="flex flex-col items-center text-center group cursor-pointer" onclick="openQRModal()">
             <div class="w-24 h-24 rounded-xl bg-white p-1.5 shadow-md overflow-hidden group-hover:scale-105 transition">
               <img src="assets/qr_wechat.jpg" alt="张跃个人微信二维码" class="w-full h-full object-contain" />
@@ -436,23 +446,18 @@
           </div>
         </div>
 
-        <!-- Website, AI Prompt Copy & Blog Links -->
-        <div class="flex items-center justify-between gap-2 text-xs font-mono pt-2.5 border-t border-white/10 text-slate-400">
+        <!-- Website & Markdown Source Links -->
+        <div class="flex items-center justify-between gap-2 text-xs font-mono pt-2 border-t border-white/10 text-slate-400">
           <a href="https://okeeper.com" target="_blank" class="hover:text-cyan-400 flex items-center gap-1.5 transition truncate">
             <i data-lucide="globe" class="w-3.5 h-3.5 text-cyan-400 shrink-0"></i>
-            <span class="truncate">okeeper.com</span>
+            <span class="lang-zh">个人网站: okeeper.com</span>
+            <span class="lang-en">Website: okeeper.com</span>
           </a>
-          <div class="flex items-center gap-2 shrink-0">
-            <button onclick="copyAgentEvaluatePrompt(this)" class="px-2 py-0.5 rounded-md bg-purple-500/15 border border-purple-500/30 text-purple-300 hover:bg-purple-500/25 flex items-center gap-1 transition cursor-pointer" title="复制 AI Agent 专用评估 Prompt">
-              <i data-lucide="sparkles" class="w-3 h-3 text-purple-400"></i>
-              <span class="btn-label-zh lang-zh">让你的 AI 评估我</span>
-              <span class="btn-label-en lang-en">Ask Your AI About Me</span>
-            </button>
-            <button onclick="openMarkdownModal()" class="hover:text-indigo-400 flex items-center gap-1 transition cursor-pointer" title="查看 Markdown 简历源文件">
-              <i data-lucide="file-text" class="w-3.5 h-3.5 text-indigo-400"></i>
-              <span>MD</span>
-            </button>
-          </div>
+          <button onclick="openMarkdownModal()" class="hover:text-indigo-400 flex items-center gap-1 transition cursor-pointer shrink-0">
+            <i data-lucide="file-text" class="w-3.5 h-3.5 text-indigo-400"></i>
+            <span class="lang-zh">Markdown 源码</span>
+            <span class="lang-en">Markdown Source</span>
+          </button>
         </div>
       </div>
     </section>
@@ -1077,9 +1082,9 @@
           <!-- Populated dynamically via Claude Code streaming engine -->
         </div>
 
-        <!-- Claude Code Style Footer Telemetry & Quick Agent Prompt Copy (No Text Input) -->
-        <div class="px-4 sm:px-5 py-2.5 bg-[#080C17] border-t border-white/10 flex flex-wrap items-center justify-between gap-2 font-mono text-[11px]">
-          <div class="flex items-center gap-3 text-[10px] sm:text-[11px] text-slate-400">
+        <!-- Claude Code Style Footer Telemetry (Clean Status Bar) -->
+        <div class="px-4 sm:px-5 py-2.5 bg-[#080C17] border-t border-white/10 flex flex-wrap items-center justify-between gap-2 font-mono text-[11px] text-slate-400">
+          <div class="flex items-center gap-3 text-[10px] sm:text-[11px]">
             <span class="inline-flex items-center gap-1 text-emerald-400">
               <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
               <span>harness: active</span>
@@ -1089,11 +1094,10 @@
             <span>·</span>
             <span>speed: <strong id="cc-metric-speed" class="text-cyan-400">94.6 tok/s</strong></span>
           </div>
-          <button onclick="copyAgentEvaluatePrompt(this)" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/[0.04] hover:bg-purple-500/20 text-slate-300 hover:text-purple-200 border border-white/10 hover:border-purple-500/40 transition text-[11px] cursor-pointer" title="一键复制 Prompt 到你的个人 AI Agent 中深度分析我">
-            <i data-lucide="copy" class="w-3 h-3 text-purple-400"></i>
-            <span class="btn-label-zh lang-zh">复制 Prompt 到你的 AI Agent 了解我</span>
-            <span class="btn-label-en lang-en">Copy Prompt for Your Personal AI Agent</span>
-          </button>
+          <span class="text-[10px] text-slate-500">
+            <span class="lang-zh">点击上方 Slash 标签切换流式输出</span>
+            <span class="lang-en">Click Slash tags above to stream</span>
+          </span>
         </div>
       </div>
 
@@ -1677,10 +1681,10 @@
         <span>·</span>
         <a href="RESUME_2026.md" target="_blank" class="hover:text-cyan-400 transition">RESUME_2026.md</a>
         <span>·</span>
-        <button onclick="window.print()" class="hover:text-cyan-400 transition">
-          <span class="lang-zh">打印 / 导出 PDF</span>
-          <span class="lang-en">Print / Export PDF</span>
-        </button>
+        <a href="ZhangYue_Resume_2026.pdf" download="张跃-架构师-AIAgent开发工程师-简历.pdf" class="hover:text-cyan-400 transition">
+          <span class="lang-zh">下载 PDF 简历</span>
+          <span class="lang-en">Download PDF Resume</span>
+        </a>
       </div>
     </div>
   </footer>

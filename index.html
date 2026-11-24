@@ -133,6 +133,14 @@
       background: #334155;
     }
 
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
     /* Terminal Blinking Cursor */
     .cursor-blink {
       display: inline-block;
@@ -227,16 +235,26 @@
       </nav>
 
       <!-- Action Buttons -->
-      <div class="flex items-center gap-2.5">
-        <button onclick="openQRModal()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 hover:bg-emerald-500/25 transition">
+      <div class="flex items-center gap-2">
+        <button onclick="openQRModal()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 hover:bg-emerald-500/25 transition whitespace-nowrap">
           <i data-lucide="qr-code" class="w-3.5 h-3.5"></i>
           <span>扫码联系</span>
         </button>
-        <button onclick="window.print()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-lg shadow-cyan-500/20 hover:opacity-95 transition">
+        <button onclick="window.print()" class="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-lg shadow-cyan-500/20 hover:opacity-95 transition whitespace-nowrap">
           <i data-lucide="printer" class="w-3.5 h-3.5"></i>
-          <span>导出 PDF 简历</span>
+          <span class="hidden sm:inline">导出 PDF 简历</span>
+          <span class="sm:hidden">PDF</span>
         </button>
       </div>
+    </div>
+    <!-- Mobile Quick Jump Sub-Nav -->
+    <div class="md:hidden border-t border-white/5 px-4 py-2 flex items-center gap-2 overflow-x-auto no-scrollbar text-xs font-medium text-slate-300">
+      <a href="#manifesto" class="px-2.5 py-1 rounded-md bg-white/5 whitespace-nowrap">AI工程哲学</a>
+      <a href="#flagship-ai" class="px-2.5 py-1 rounded-md bg-cyan-500/15 text-cyan-300 border border-cyan-500/25 whitespace-nowrap">AI核心项目</a>
+      <a href="#ai-playground" class="px-2.5 py-1 rounded-md bg-white/5 whitespace-nowrap">Agent互动</a>
+      <a href="#architecture" class="px-2.5 py-1 rounded-md bg-white/5 whitespace-nowrap">分布式底座</a>
+      <a href="#timeline" class="px-2.5 py-1 rounded-md bg-white/5 whitespace-nowrap">12年履历</a>
+      <a href="#connect" class="px-2.5 py-1 rounded-md bg-white/5 whitespace-nowrap">微信/公众号</a>
     </div>
   </header>
 
@@ -371,9 +389,9 @@
     <!-- ==========================================
          SECTION 2: QUANTIFIED IMPACT METRICS BENTO
     =========================================== -->
-    <section class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       <!-- Metric 1 -->
-      <div class="bento-card rounded-2xl p-5 relative overflow-hidden">
+      <div class="bento-card rounded-2xl p-4 sm:p-5 relative overflow-hidden">
         <div class="flex items-center justify-between mb-2">
           <span class="text-xs font-mono uppercase tracking-wider text-emerald-400">AI 智能客服微调成效</span>
           <i data-lucide="trending-down" class="w-4 h-4 text-emerald-400"></i>
@@ -382,12 +400,12 @@
           90% <span class="text-emerald-400">→ 40%</span>
         </div>
         <p class="mt-1.5 text-xs text-slate-400 leading-relaxed">
-          通过真实语料清洗 + Qwen 垂直微调 (SFT/RLHF) + RAG，人工客服介入率断崖式下降 50 个百分点
+          通过真实语料清洗 + Qwen 垂直微调 (SFT/RLHF) + RAG，人工客服介入率大幅下降 50 个百分点
         </p>
       </div>
 
       <!-- Metric 2 -->
-      <div class="bento-card rounded-2xl p-5 relative overflow-hidden">
+      <div class="bento-card rounded-2xl p-4 sm:p-5 relative overflow-hidden">
         <div class="flex items-center justify-between mb-2">
           <span class="text-xs font-mono uppercase tracking-wider text-cyan-400">自研 AI Native IDE</span>
           <i data-lucide="cpu" class="w-4 h-4 text-cyan-400"></i>
@@ -401,7 +419,7 @@
       </div>
 
       <!-- Metric 3 -->
-      <div class="bento-card rounded-2xl p-5 relative overflow-hidden">
+      <div class="bento-card rounded-2xl p-4 sm:p-5 relative overflow-hidden">
         <div class="flex items-center justify-between mb-2">
           <span class="text-xs font-mono uppercase tracking-wider text-indigo-400">KuGPT 企业级 Token Hub</span>
           <i data-lucide="zap" class="w-4 h-4 text-indigo-400"></i>
@@ -415,7 +433,7 @@
       </div>
 
       <!-- Metric 4 -->
-      <div class="bento-card rounded-2xl p-5 relative overflow-hidden">
+      <div class="bento-card rounded-2xl p-4 sm:p-5 relative overflow-hidden">
         <div class="flex items-center justify-between mb-2">
           <span class="text-xs font-mono uppercase tracking-wider text-amber-400">高并发金融电商底座</span>
           <i data-lucide="shield-check" class="w-4 h-4 text-amber-400"></i>
@@ -510,10 +528,10 @@
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
         <div>
           <div class="text-xs font-mono uppercase tracking-widest text-cyan-400 mb-1">Flagship AI Engineering Projects (2023 - 2026)</div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-white flex items-center gap-2.5">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white flex flex-wrap items-center gap-2.5">
             <span>核心 AI Agent 与大模型落地实战</span>
             <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-gradient-to-r from-cyan-500/20 to-indigo-500/20 border border-cyan-500/30 text-cyan-300">
-              招聘官重点关注
+              2023 - 2026 核心代表作
             </span>
           </h2>
         </div>
@@ -521,11 +539,11 @@
       </div>
 
       <!-- FLAGSHIP PROJECT 1: AI R&D Efficiency Platform / VS Code IDE -->
-      <div class="bento-card rounded-3xl p-6 sm:p-8 border-l-4 border-l-cyan-400 relative overflow-hidden">
+      <div class="bento-card rounded-3xl p-5 sm:p-8 border-l-4 border-l-cyan-400 relative overflow-hidden">
         <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-white/10">
           <div>
             <div class="flex flex-wrap items-center gap-2 mb-2">
-              <span class="px-2.5 py-0.5 rounded-md text-xs font-mono font-bold bg-cyan-500 text-slate-950">核心主推项目 #1</span>
+              <span class="px-2.5 py-0.5 rounded-md text-xs font-mono font-bold bg-cyan-500 text-slate-950">01 / 核心架构项目</span>
               <span class="px-2.5 py-0.5 rounded-md text-xs font-mono bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">VS Code 深度自研</span>
               <span class="px-2.5 py-0.5 rounded-md text-xs font-mono bg-purple-500/20 text-purple-300 border border-purple-500/30">Harness Engineering</span>
               <span class="px-2.5 py-0.5 rounded-md text-xs font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Vibe Coding 闭环</span>
@@ -618,11 +636,11 @@
       </div>
 
       <!-- FLAGSHIP PROJECT 2: E-Commerce & FinTech Smart CS Fine-Tuning + Harness Agent -->
-      <div class="bento-card rounded-3xl p-6 sm:p-8 border-l-4 border-l-emerald-400 relative overflow-hidden">
+      <div class="bento-card rounded-3xl p-5 sm:p-8 border-l-4 border-l-emerald-400 relative overflow-hidden">
         <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-white/10">
           <div>
             <div class="flex flex-wrap items-center gap-2 mb-2">
-              <span class="px-2.5 py-0.5 rounded-md text-xs font-mono font-bold bg-emerald-500 text-slate-950">核心主推项目 #2</span>
+              <span class="px-2.5 py-0.5 rounded-md text-xs font-mono font-bold bg-emerald-500 text-slate-950">02 / 核心算法与Agent项目</span>
               <span class="px-2.5 py-0.5 rounded-md text-xs font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">人工介入率 90% → 40%</span>
               <span class="px-2.5 py-0.5 rounded-md text-xs font-mono bg-amber-500/20 text-amber-300 border border-amber-500/30">Qwen 微调 (Pre-train / SFT / RLHF)</span>
               <span class="px-2.5 py-0.5 rounded-md text-xs font-mono bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">对话式交易 Harness Agent</span>
@@ -735,11 +753,11 @@
       </div>
 
       <!-- FLAGSHIP PROJECT 3: KuGPT Enterprise Token Hub -->
-      <div class="bento-card rounded-3xl p-6 sm:p-8 border-l-4 border-l-indigo-400 relative overflow-hidden">
+      <div class="bento-card rounded-3xl p-5 sm:p-8 border-l-4 border-l-indigo-400 relative overflow-hidden">
         <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-5 border-b border-white/10">
           <div>
             <div class="flex flex-wrap items-center gap-2 mb-2">
-              <span class="px-2.5 py-0.5 rounded-md text-xs font-mono font-bold bg-indigo-500 text-white">核心 AI 基建项目 #3</span>
+              <span class="px-2.5 py-0.5 rounded-md text-xs font-mono font-bold bg-indigo-500 text-white">03 / 企业级 AI 基建项目</span>
               <span class="px-2.5 py-0.5 rounded-md text-xs font-mono bg-amber-500/20 text-amber-300 border border-amber-500/30">2023年初自发提案发起</span>
               <span class="px-2.5 py-0.5 rounded-md text-xs font-mono bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">企业级 Token Hub</span>
             </div>
@@ -792,32 +810,32 @@
       <!-- Left 7 Cols: Interactive Agent Command Console -->
       <div class="lg:col-span-7 bento-card rounded-3xl overflow-hidden flex flex-col border-cyan-500/30">
         <!-- Terminal Window Bar -->
-        <div class="px-5 py-3.5 bg-slate-950 border-b border-white/10 flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
-            <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
-            <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
-            <span class="ml-2 text-xs font-mono text-slate-300">zhangyue-agent-console ~ harness-cli v2.6</span>
+        <div class="px-4 sm:px-5 py-3.5 bg-slate-950 border-b border-white/10 flex items-center justify-between gap-2">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="w-3 h-3 rounded-full bg-rose-500/80 shrink-0"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500/80 shrink-0"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500/80 shrink-0"></span>
+            <span class="ml-1.5 text-xs font-mono text-slate-300 truncate">zhangyue-agent-console ~ harness-cli v2.6</span>
           </div>
-          <span class="text-[11px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20">
-            Interactive Recruiter Copilot
+          <span class="text-[10px] sm:text-[11px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20 shrink-0">
+            AI Resume Agent
           </span>
         </div>
 
         <!-- Prompt Presets -->
-        <div class="px-5 py-3 bg-slate-900/70 border-b border-white/10 flex flex-wrap items-center gap-2">
-          <span class="text-xs font-mono text-slate-400">向张跃的 AI 分身提问：</span>
-          <button onclick="runTerminalQuery('match')" class="px-2.5 py-1 rounded-lg text-xs font-mono bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 hover:bg-cyan-500/25 transition">
-            🎯 为什么我是稀缺的 AI Agent 架构师？
+        <div class="px-4 sm:px-5 py-3 bg-slate-900/70 border-b border-white/10 flex flex-wrap items-center gap-2">
+          <span class="text-xs font-mono text-slate-400">快速检索核心亮点：</span>
+          <button onclick="runTerminalQuery('match')" class="px-2.5 py-1 rounded-lg text-xs font-mono bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 hover:bg-cyan-500/25 transition text-left">
+            🎯 核心技术优势全景
           </button>
-          <button onclick="runTerminalQuery('finetune')" class="px-2.5 py-1 rounded-lg text-xs font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 hover:bg-emerald-500/25 transition">
-            🧠 智能客服 Qwen 微调与 90%→40% 细节
+          <button onclick="runTerminalQuery('finetune')" class="px-2.5 py-1 rounded-lg text-xs font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 hover:bg-emerald-500/25 transition text-left">
+            🧠 Qwen 微调与客服 Agent (90%→40%)
           </button>
-          <button onclick="runTerminalQuery('ide')" class="px-2.5 py-1 rounded-lg text-xs font-mono bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 hover:bg-indigo-500/25 transition">
+          <button onclick="runTerminalQuery('ide')" class="px-2.5 py-1 rounded-lg text-xs font-mono bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 hover:bg-indigo-500/25 transition text-left">
             ⚡ 自研 VS Code AI 平台与 Harness 沉淀
           </button>
-          <button onclick="runTerminalQuery('future')" class="px-2.5 py-1 rounded-lg text-xs font-mono bg-purple-500/15 text-purple-300 border border-purple-500/30 hover:bg-purple-500/25 transition">
-            🎼 对未来“AI 指挥家”的深度思考
+          <button onclick="runTerminalQuery('future')" class="px-2.5 py-1 rounded-lg text-xs font-mono bg-purple-500/15 text-purple-300 border border-purple-500/30 hover:bg-purple-500/25 transition text-left">
+            🎼 对未来“AI 指挥家”的工程思考
           </button>
         </div>
 
@@ -1087,12 +1105,12 @@
         </div>
       </div>
 
-      <!-- Right 5 Cols: What Top Tech Recruiters Value Most -->
-      <div class="lg:col-span-5 bento-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
+      <!-- Right 5 Cols: Engineering Leadership & Personal Qualities -->
+      <div class="lg:col-span-5 bento-card rounded-3xl p-5 sm:p-8 flex flex-col justify-between space-y-6">
         <div>
-          <div class="text-xs font-mono uppercase tracking-widest text-amber-400 mb-1">Why Top Companies Hire Me</div>
-          <h2 class="text-2xl font-extrabold text-white">优秀科技公司最看重的 5 大特质</h2>
-          <p class="text-xs text-slate-400 mt-1">除了硬核 AI Agent 技术，过往 12 年沉淀的工程品质同样经过大厂实战检验</p>
+          <div class="text-xs font-mono uppercase tracking-widest text-amber-400 mb-1">Engineering Leadership & Core Qualities</div>
+          <h2 class="text-2xl font-extrabold text-white">核心工程素养与技术领导力</h2>
+          <p class="text-xs text-slate-400 mt-1">12年大厂与独角兽实战沉淀的架构视野、团队管理与持续学习输出习惯</p>
         </div>
 
         <div class="space-y-3.5 text-xs sm:text-sm">
@@ -1101,8 +1119,8 @@
               <i data-lucide="flame" class="w-4 h-4"></i>
             </div>
             <div>
-              <div class="font-bold text-white">极强的技术敏锐度与自驱破局力 (Founder Mentality)</div>
-              <p class="text-xs text-slate-300 mt-0.5">不等上级指派，2023年初主动洞察 AI 革命并自发提案构建 KuGPT；3年+坚持运营「神笔君」公众号输出深度内容。</p>
+              <div class="font-bold text-white">技术前瞻性与自驱破局力</div>
+              <p class="text-xs text-slate-300 mt-0.5">2023年初敏锐洞察 AI 范式革命，自发在公司内部提案构建 KuGPT (Token Hub)；连续 3年+ 运营个人公众号「神笔君」，高频分享前沿 AI 技术与深度思考。</p>
             </div>
           </div>
 
@@ -1111,8 +1129,8 @@
               <i data-lucide="box" class="w-4 h-4"></i>
             </div>
             <div>
-              <div class="font-bold text-white">把个人经验转化为公司平台资产的架构思维</div>
-              <p class="text-xs text-slate-300 mt-0.5">从早年封装全公司复用的压测/重试/Leaf分布式ID组件，到如今打造 AI IDE 将个人 Harness 沉淀为公司数字资产，始终致力于“造桥铺路”。</p>
+              <div class="font-bold text-white">将个人经验沉淀为组织平台资产</div>
+              <p class="text-xs text-slate-300 mt-0.5">从早年研发全公司复用的压测工具、可重试框架、Leaf分布式ID组件，到如今打造自研 AI IDE 将个人 Harness 经验沉淀为公司数字资产，持续以平台化思维赋能团队。</p>
             </div>
           </div>
 
@@ -1121,8 +1139,8 @@
               <i data-lucide="target" class="w-4 h-4"></i>
             </div>
             <div>
-              <div class="font-bold text-white">强烈的业务 ROI 导向与量化交付能力</div>
-              <p class="text-xs text-slate-300 mt-0.5">拒绝为了炫技而做 AI：智能客服微调直接将人工介入率从 90% 砍到 40%；菜鸟库存对账准确率提升至 99.99%。</p>
+              <div class="font-bold text-white">业务价值导向与量化结果闭环</div>
+              <p class="text-xs text-slate-300 mt-0.5">坚持技术服务于业务增长：智能客服微调与 Harness 落地将人工介入率从 90% 降至 40%；菜鸟国际 WMS 库存智能对账将准确率从 99% 提升至 99.99%。</p>
             </div>
           </div>
 
@@ -1131,14 +1149,14 @@
               <i data-lucide="users" class="w-4 h-4"></i>
             </div>
             <div>
-              <div class="font-bold text-white">7人核心团队管理与跨部门高口碑协同</div>
-              <p class="text-xs text-slate-300 mt-0.5">长期带领一线研发团队打硬仗，因材施教帮助成员成长；在复杂跨团队需求推进与线上应急响应中拥有极佳的组织口碑。</p>
+              <div class="font-bold text-white">团队管理赋能与跨部门高效协同</div>
+              <p class="text-xs text-slate-300 mt-0.5">长期带领 7 人一线核心开发团队，结合成员特点因材施教；作为公司架构委员会成员，在跨团队复杂协作与重大技术方案把控中建立了良好的工程口碑。</p>
             </div>
           </div>
         </div>
 
         <!-- Education Footer inside Card -->
-        <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+        <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-xs">
           <div>
             <span class="text-slate-400">教育背景：</span>
             <strong class="text-white">深圳大学 · 计算机科学与技术（本科）</strong>
@@ -1244,22 +1262,22 @@
   </footer>
 
   <!-- QR Code Lightbox Modal -->
-  <div id="qr-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-4 no-print" onclick="closeQRModal()">
-    <div class="bg-[#0B101E] border border-white/15 rounded-3xl max-w-2xl w-full p-6 sm:p-8 relative" onclick="event.stopPropagation()">
+  <div id="qr-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-4 overflow-y-auto no-print" onclick="closeQRModal()">
+    <div class="bg-[#0B101E] border border-white/15 rounded-3xl max-w-2xl w-full p-5 sm:p-8 relative my-auto max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
       <button onclick="closeQRModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 text-slate-300 hover:bg-white/20 flex items-center justify-center">
         ✕
       </button>
-      <h3 class="text-xl font-bold text-white text-center mb-1">扫码添加张跃微信 & 关注「神笔君」公众号</h3>
-      <p class="text-xs text-slate-400 text-center mb-6 font-mono">电话/微信：18679223924 · 邮箱：okeeper.com@gmail.com</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <h3 class="text-lg sm:text-xl font-bold text-white text-center mb-1 pr-6">扫码添加张跃微信 & 关注「神笔君」公众号</h3>
+      <p class="text-xs text-slate-400 text-center mb-5 font-mono">电话/微信：18679223924 · 邮箱：okeeper.com@gmail.com</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
         <div class="flex flex-col items-center p-4 rounded-2xl bg-slate-950 border border-emerald-500/30">
-          <img src="assets/qr_wechat.jpg" alt="个人微信二维码" class="w-56 h-56 object-contain rounded-xl bg-white p-2" />
-          <span class="mt-3 text-sm font-bold text-emerald-400">个人微信（长风 · 深圳）</span>
-          <span class="text-xs text-slate-400 mt-0.5">招聘沟通 / 架构交流</span>
+          <img src="assets/qr_wechat.jpg" alt="个人微信二维码" class="w-44 h-44 sm:w-56 sm:h-56 object-contain rounded-xl bg-white p-2" />
+          <span class="mt-2.5 text-sm font-bold text-emerald-400">个人微信（长风 · 深圳）</span>
+          <span class="text-xs text-slate-400 mt-0.5">长按或扫码添加好友</span>
         </div>
         <div class="flex flex-col items-center p-4 rounded-2xl bg-slate-950 border border-purple-500/30">
-          <img src="assets/qr_gzh.jpg" alt="神笔君公众号二维码" class="w-56 h-56 object-contain rounded-xl bg-white p-2" />
-          <span class="mt-3 text-sm font-bold text-purple-400">微信公众号：神笔君</span>
+          <img src="assets/qr_gzh.jpg" alt="神笔君公众号二维码" class="w-44 h-44 sm:w-56 sm:h-56 object-contain rounded-xl bg-white p-2" />
+          <span class="mt-2.5 text-sm font-bold text-purple-400">微信公众号：神笔君</span>
           <span class="text-xs text-slate-400 mt-0.5">持续 3年+ 分享前沿 AI 技术与个人洞见</span>
         </div>
       </div>
@@ -1287,12 +1305,12 @@
     // Interactive Agent Console Responses
     const terminalAnswers = {
       match: {
-        cmd: 'agent evaluate --dimension "Core Competitiveness & Market Fit"',
+        cmd: 'agent evaluate --dimension "Core Technical Strengths"',
         html: `
-          <p class="text-cyan-300 font-semibold">[评估结论：市场上极度稀缺的“懂底层微调 + 懂AI IDE/Harness平台 + 12年高并发底座”复合型领军者]</p>
-          <p>1. <span class="text-white font-semibold">全链路闭环实战而非纸上谈兵</span>：市面上多数候选人仅停留在调用 API 或简单 Prompt，而张跃既深入做过 <span class="text-emerald-300">Qwen 开源大模型垂直微调 (Pre-train/SFT/RLHF)</span>，又从 0 到 1 架构过 <span class="text-cyan-300">基于 VS Code 的企业级 AI 研发效能 IDE</span>。</p>
-          <p>2. <span class="text-white font-semibold">极早的 AI 认知觉醒（2023年初）</span>：在行业尚处观望期时便自发提案落地公司级 Token Hub (KuGPT)，并连续 3 年+在「神笔君」公众号输出前沿洞察。</p>
-          <p>3. <span class="text-white font-semibold">生产级交付保障</span>：拥有阿里菜鸟与 Akulaku 架构委员会的 12 年分布式功底，能解决 AI 落地中最棘手的高并发、合规护栏与确定性执行难题。</p>
+          <p class="text-cyan-300 font-semibold">[核心技术竞争力：底层模型微调 + 自研 AI IDE 平台 + 12年高并发架构底座]</p>
+          <p>1. <span class="text-white font-semibold">全链路 AI 工程闭环实战</span>：既深入实践过 <span class="text-emerald-300">Qwen 开源大模型垂直微调 (Pre-train/SFT/RLHF)</span>，又从 0 到 1 主导架构过 <span class="text-cyan-300">基于 VS Code 的企业级 AI 研发效能 IDE</span>。</p>
+          <p>2. <span class="text-white font-semibold">2023年初入局的先行实践</span>：大模型兴起之初便自发提案落地公司级 Token Hub (KuGPT)，并连续 3 年+在「神笔君」公众号持续输出前沿技术实践与思考。</p>
+          <p>3. <span class="text-white font-semibold">生产级高可用架构保障</span>：拥有阿里菜鸟与 Akulaku 架构委员会的 12 年分布式系统功底，保障 AI Agent 在生产环境中的高并发、合规安全与确定性交付。</p>
         `
       },
       finetune: {
